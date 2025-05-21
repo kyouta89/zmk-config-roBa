@@ -53,7 +53,7 @@
         };
 
         double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
+            bindings = <&kp JP_DQUOTE>;
             key-positions = <20 21>;
         };
     };
@@ -95,7 +95,7 @@
             bindings = <
 &kp Q             &kp W         &kp E         &kp R             &kp T                                             &kp Y        &kp U  &lt 5 I    &kp O       &kp P
 &kp A             &kp S         &kp D         &kp F             &kp G        &kp ESCAPE            &kp MINUS      &kp H        &kp J  &kp K      &kp L       &kp SEMICOLON
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp TAB               &kp AT         &kp N        &kp M  &kp COMMA  &kp PERIOD  &mt RIGHT_SHIFT SLASH
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp TAB               &kp JP_AT      &kp N        &kp M  &kp COMMA  &kp PERIOD  &mt RIGHT_SHIFT SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 LANGUAGE_2  &lt 2 SPACE  &lt 3 LANGUAGE_1      &kp BACKSPACE  &lt 1 ENTER                                &kp DEL
             >;
 
@@ -104,19 +104,19 @@
 
         SYMBOLS {
             bindings = <
-&trans          &kp SQT          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL                      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &trans         &kp MINUS
-&kp GRAVE       &kp DOLLAR       &kp PERCENT           &kp AMPERSAND          &kp TILDE  &trans      &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp AT_SIGN    &kp BACKSLASH  &kp CARET
-&kp UNDERSCORE  &kp EXCLAMATION  &kp DOUBLE_QUOTES     &kp HASH               &kp PIPE   &trans      &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SEMICOLON  &kp COLON      &kp INT_YEN
-&trans          &trans           &trans                &trans                 &trans     &trans      &trans  &trans                                                                     &trans
+&trans             &kp JP_QUOTE     &kp JP_LPAREN         &kp JP_RPAREN          &kp JP_EQUAL                   &kp JP_LPAREN         &kp JP_RPAREN          &trans         &trans         &kp MINUS
+&kp JP_BACKQUOTE   &kp DOLLAR       &kp PERCENT           &kp JP_AMPERSAND       &kp JP_TILDE  &trans   &trans  &kp JP_LBRACE         &kp JP_RBRACE          &kp JP_AT      &kp BACKSLASH  &kp JP_CARET
+&kp JP_UNDERSCORE  &kp EXCLAMATION  &kp JP_DQUOTES        &kp HASH               &kp JP_PIPE   &trans   &trans  &kp JP_LBRACKET       &kp JP_RBRACKET        &kp SEMICOLON  &kp JP_COLON   &kp JP_YEN
+&trans             &trans           &trans                &trans                 &trans     &trans      &trans  &trans                                                                     &trans
             >;
         };
 
         NUM {
             bindings = <
-&trans      &kp F7  &kp F8  &kp F9  &kp F10                          &kp PLUS      &kp N7        &kp N8        &kp N9        &kp MINUS
-&trans      &kp F4  &kp F5  &kp F6  &kp F11  &trans       &trans     &kp ASTERISK  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp SLASH
-&kp ESCAPE  &kp F1  &kp F2  &kp F3  &kp F12  &kp F13      &kp EQUAL  &kp N0        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD
-&trans      &trans  &trans  &trans  &trans   &trans       &trans     &trans                                                  &trans
+&trans      &kp F7  &kp F8  &kp F9  &kp F10                             &kp JP_PLUS      &kp N7        &kp N8        &kp N9        &kp MINUS
+&trans      &kp F4  &kp F5  &kp F6  &kp F11  &trans       &trans        &kp JP_ASTERISK  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp SLASH
+&kp ESCAPE  &kp F1  &kp F2  &kp F3  &kp F12  &kp F13      &kp JP_EQUAL  &kp N0           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD
+&trans      &trans  &trans  &trans  &trans   &trans       &trans        &trans                                                  &trans
             >;
         };
 
