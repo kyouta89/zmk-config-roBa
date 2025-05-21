@@ -106,7 +106,7 @@
             bindings = <
 &trans             &kp JP_QUOTE     &kp JP_LPAREN         &kp JP_RPAREN          &kp JP_EQUAL                   &kp JP_LPAREN         &kp JP_RPAREN          &trans         &trans         &kp MINUS
 &kp JP_BACKQUOTE   &kp DOLLAR       &kp PERCENT           &kp JP_AMPERSAND       &kp JP_TILDE  &trans   &trans  &kp JP_LBRACE         &kp JP_RBRACE          &kp JP_AT      &kp BACKSLASH  &kp JP_CARET
-&kp JP_UNDERSCORE  &kp EXCLAMATION  &kp JP_DQUOTES        &kp HASH               &kp LS(0x89)   &trans   &trans  &kp JP_LBRACKET       &kp JP_RBRACKET        &kp SEMICOLON  &kp JP_COLON   &kp JP_YEN
+&kp JP_UNDERSCORE  &kp EXCLAMATION  &kp JP_DQUOTES        &kp HASH               &kp PIPE      &trans   &trans  &kp JP_LBRACKET       &kp JP_RBRACKET        &kp SEMICOLON  &kp JP_COLON   &kp JP_YEN
 &trans             &trans           &trans                &trans                 &trans     　　&trans   &trans  &trans                                                                     &trans
             >;
         };
