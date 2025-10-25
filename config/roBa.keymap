@@ -167,7 +167,7 @@
 &kp Q             &kp W         &kp E         &kp R             &kp T                                                      &kp Y        &kp U  &lt SCROLL &kp I &kp O       &kp P
 &kp A             &kp S         &kp D         &kp F             &kp G        &kp ESCAPE              &kp MINUS      &kp H        &kp J  &kp K      &kp L       &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp TAB                 &kp JP_AT      &kp N        &kp M  &kp COMMA  &kp PERIOD  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt ADJUST &kp JP_EISU &lt NUM &kp SPACE &lt ARROW &kp JP_KANA       &kp BACKSPACE  &lt SYMBOLS &kp ENTER             &kp DEL
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt ADJUST JP_EISU &lt NUM SPACE &lt ARROW JP_KANA       &kp BACKSPACE  &lt SYMBOLS ENTER             &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
