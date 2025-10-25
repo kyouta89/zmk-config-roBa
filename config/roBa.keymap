@@ -37,10 +37,15 @@
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
 
+/*
+ * 修正点:
+ * 'hold-on-other-key-press' を削除 (ビルドエラーのため)
+ * 'tapping-term-ms' を追加 (Shift誤爆の代替策)
+ */
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
-    hold-on-other-key-press; /* Shift誤爆防止 */
+    tapping-term-ms = <220>; /* Shift誤爆防止の代替案 (デフォルト200ms) */
 };
 
 // &lt のグローバル設定を追加
@@ -175,7 +180,7 @@
 
         /*
          * NUM レイヤー 2
-         * 修正点: ご要望に基づき、NBR_ を KP_ に戻します
+         * 修正点: ご要望に基づき、テンキーコード(KP_)を使用
          */
         NUM { 
             bindings = <
@@ -189,7 +194,7 @@
         
         /*
          * ARROW レイヤー 3
-         * 修正点: &kp LG_RIGHT_ARROW) -> &kp LG(RIGHT_ARROW) (ビルドエラーの原因)
+         * 修正点: &kp LG(RIGHT_ARROW) の括弧を修正 (ビルドエラーの原因)
          */
         ARROW {
             bindings = <
