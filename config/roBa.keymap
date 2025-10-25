@@ -124,29 +124,16 @@
             bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>;
             tap-ms = <20>;
         };
-
-        // ページ上下用
-        pg_up_down: behavior_sensor_rotate_page_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp PG_DN>, <&kp PG_UP>;
-            tap-ms = <20>;
-        };
     };
 
     keymap {
         compatible = "zmk,keymap";
-
-        /*
-         * default_layer
-         * 修正点: すべての &lt に &kp を追加 (ビルドエラーの主原因)
-         */
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E         &kp R             &kp T                                                      &kp Y        &kp U  &lt SCROLL I &kp O       &kp P
 &kp A             &kp S         &kp D         &kp F             &kp G        &kp ESCAPE              &kp MINUS      &kp H        &kp J  &kp K      &kp L       &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp TAB                 &kp JP_AT      &kp N        &kp M  &kp COMMA  &kp PERIOD  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt ADJUST LANGUAGE_2  &lt NUM SPACE  &lt ARROW LANGUAGE_1      &kp BACKSPACE  &lt SYMBOLS ENTER
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt ADJUST LANGUAGE_2  &lt NUM SPACE  &lt ARROW LANGUAGE_1      &kp BACKSPACE  &lt SYMBOLS ENTER　　　　　　　　　　&kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -160,13 +147,9 @@
 /* 下段 */ &mt LSHIFT JP_UNDERSCORE &kp EXCLAMATION &kp JP_DQUOTE    &kp HASH               &kp JP_PIPE   &trans   &trans  &kp JP_LBRACKET       &kp JP_RBRACKET        &kp SEMICOLON  &kp JP_COLON &mt RSHIFT JP_YEN
 /* 親指 */ &kp LCTRL          &kp LEFT_WIN     &kp LEFT_ALT          &trans                 &trans        &trans   &trans  &trans                                                                     &trans
             >;
-            sensor-bindings = <&pg_up_down>; // ページ上下
         };
 
-        /*
-         * NUM レイヤー 2
-         * 修正点: ご要望に基づき、テンキーコード(KP_)を使用
-         */
+
         NUM { 
             bindings = <
 &trans      &kp F7       &kp F8       &kp F9       &kp F10                                   &kp KP_PLUS      &kp KP_N7     &kp KP_N8     &kp KP_N9     &kp KP_MINUS
@@ -177,10 +160,6 @@
             sensor-bindings = <&vol_up_down>; // 音量調整
         };
         
-        /*
-         * ARROW レイヤー 3
-         * 修正点: &kp LG(RIGHT_ARROW) の括弧を修正 (ビルドエラーの原因)
-         */
         ARROW {
             bindings = <
 /* 左手: ブラウザタブ, ウィンドウスナップ, アプリ操作 */                                                        /* 右手: 矢印, Home/End, テキスト選択 */
@@ -216,7 +195,7 @@
          */
         ADJUST { 
             bindings = <
-&trans  &trans        &trans        &trans        &kp LG(JP_HANZEN) /* Mac用 Cmd+` */   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans        &trans        &trans        &kp trans           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
