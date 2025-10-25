@@ -194,15 +194,14 @@
         
         /*
          * ARROW レイヤー 3
-         * 修正点: &kp LG(RIGHT_ARROW) の括弧を修正 (ビルドエラーの原因)
+         * 修正点: 親指行(4行目)のキー数を10個 -> 9個に修正 (ビルドエラーの原因)
          */
         ARROW {
             bindings = <
-/* 左手: ブラウザタブ, ウィンドウスナップ, アプリ操作 */                                                        /* 右手: 矢印, Home/End, テキスト選択 */
-&kp LC(T)          &kp LC(W)         &kp LC(LS(T))     &kp LC(TAB)        &kp LC(LS(TAB))                       &trans              &trans            &kp UP_ARROW      &trans            &trans
-&kp LG(UP)         &kp LG(LEFT_ARROW)&kp LG(DOWN)      &kp LG(RIGHT_ARROW)&kp LA(F4)       &kp LA(TAB)     &kp LA(LS(TAB))         &kp HOME            &kp LEFT_ARROW    &kp DOWN_ARROW    &kp RIGHT_ARROW   &kp END
-&trans             &trans            &trans            &trans             &trans           &trans          &trans                  &kp LS(HOME)        &kp LC(LS(LEFT))  &kp LC(LS(RIGHT)) &kp LS(END)       &trans
-&trans             &trans            &trans            &trans             &trans           &trans          &trans                  &trans              &kp LC(LEFT_ARROW) &kp LC(RIGHT_ARROW)                &trans
+/* 行 1 (10) */ &kp LC(T)          &kp LC(W)         &kp LC(LS(T))     &kp LC(TAB)        &kp LC(LS(TAB))                       &trans              &trans            &kp UP_ARROW      &trans            &trans
+/* 行 2 (12) */ &kp LG(UP)         &kp LG(LEFT_ARROW)&kp LG(DOWN)      &kp LG(RIGHT_ARROW)&kp LA(F4)       &kp LA(TAB)     &kp LA(LS(TAB))         &kp HOME            &kp LEFT_ARROW    &kp DOWN_ARROW    &kp RIGHT_ARROW   &kp END
+/* 行 3 (12) */ &trans             &trans            &trans            &trans             &trans           &trans          &trans                  &kp LS(HOME)        &kp LC(LS(LEFT))  &kp LC(LS(RIGHT)) &kp LS(END)       &trans
+/* 行 4 (9)  */ &trans             &trans            &trans            &trans             &trans           &trans          /* (Gap) */             &trans              &kp LC(LEFT_ARROW) &kp LC(RIGHT_ARROW)
             >;
             sensor-bindings = <&scroll_up_down>; // デフォルトのスクロール
         };
@@ -227,11 +226,6 @@
 
         ADJUST { // レイヤー 6
             bindings = <
-&trans  &trans        &trans        &trans        &kp LC(JP_HANZEN)                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans        &trans        &trans        &kp LG(JP_HANZEN) /* Mac用 Cmd+` */   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
-            >;
-        };
-    };
-};
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
