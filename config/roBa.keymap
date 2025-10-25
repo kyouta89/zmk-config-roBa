@@ -133,7 +133,7 @@
 &kp Q             &kp W         &kp E         &kp R             &kp T                                                      &kp Y        &kp U  &lt SCROLL I &kp O       &kp P
 &kp A             &kp S         &kp D         &kp F             &kp G        &kp ESCAPE              &kp MINUS      &kp H        &kp J  &kp K      &kp L       &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp TAB                 &kp JP_AT      &kp N        &kp M  &kp COMMA  &kp PERIOD  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt ADJUST LANGUAGE_2  &lt NUM SPACE  &lt ARROW LANGUAGE_1      &kp BACKSPACE  &lt SYMBOLS ENTER　　　　　　　　　　&kp DEL
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt ADJUST LANGUAGE_2  &lt NUM SPACE  &lt ARROW LANGUAGE_1      &kp BACKSPACE  &lt SYMBOLS ENTER                 &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
