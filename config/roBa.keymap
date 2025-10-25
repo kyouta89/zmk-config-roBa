@@ -91,7 +91,7 @@
             bindings = <&kp JP_RBRACE>;
             key-positions = <7 8>; // I + O
         };
-        lbracket_combo {
+lbracket_combo {
             bindings = <&kp JP_LBRACKET>;
             key-positions = <29 30>; // N + M
         };
@@ -147,12 +147,16 @@
     keymap {
         compatible = "zmk,keymap";
 
+        /*
+         * default_layer
+         * 修正点: すべての &lt に &kp を追加
+         */
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R             &kp T                                              &kp Y        &kp U  &lt SCROLL I &kp O       &kp P
+&kp Q             &kp W         &kp E         &kp R             &kp T                                                      &kp Y        &kp U  &lt SCROLL &kp I &kp O       &kp P
 &kp A             &kp S         &kp D         &kp F             &kp G        &kp ESCAPE              &kp MINUS      &kp H        &kp J  &kp K      &kp L       &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp TAB                 &kp JP_AT      &kp N        &kp M  &kp COMMA  &kp PERIOD  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt ADJUST JP_EISU &lt NUM SPACE &lt ARROW JP_KANA       &kp BACKSPACE  &lt SYMBOLS ENTER             &kp DEL
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt ADJUST &kp JP_EISU &lt NUM &kp SPACE &lt ARROW &kp JP_KANA       &kp BACKSPACE  &lt SYMBOLS &kp ENTER             &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -169,7 +173,7 @@
             sensor-bindings = <&pg_up_down>; // ページ上下
         };
 
-        NUM { // レイヤー 2
+        NUM { // レイヤー 2 (NBR_表記は正しいので変更しない)
             bindings = <
 &trans      &kp F7       &kp F8       &kp F9       &kp F10                                   &kp JP_PLUS      &kp NBR_7     &kp NBR_8     &kp NBR_9     &kp MINUS
 &trans      &kp F4       &kp F5       &kp F6       &kp F11      &trans       &trans        &kp JP_ASTERISK  &kp NBR_4     &kp NBR_5     &kp NBR_6     &kp SLASH
@@ -184,7 +188,7 @@
 /* 左手: ブラウザタブ, ウィンドウスナップ, アプリ操作 */                                                        /* 右手: 矢印, Home/End, テキスト選択 */
 &kp LC(T)          &kp LC(W)         &kp LC(LS(T))     &kp LC(TAB)        &kp LC(LS(TAB))                       &trans              &trans            &kp UP_ARROW      &trans            &trans
 &kp LG(UP)         &kp LG(LEFT_ARROW)&kp LG(DOWN)      &kp LG(RIGHT_ARROW)&kp LA(F4)       &kp LA(TAB)     &kp LA(LS(TAB))         &kp HOME            &kp LEFT_ARROW    &kp DOWN_ARROW    &kp RIGHT_ARROW   &kp END
-&trans             &trans            &trans            &trans             &trans           &trans          &trans                  &kp LS(HOME)        &kp LC(LS(LEFT))  &kp LC(LS(RIGHT)) &kp LS(END)       &trans
+&trans             &trans            &trans            &trans             &trans           &trans          &trans                  &kp LS(HOME)        &kp LC(LS(LEFT))  &kp LC(LS(RIGHT)) &kp LS_END)       &trans
 &trans             &trans            &trans            &trans             &trans           &trans          &trans                  &trans              &kp LC(LEFT_ARROW) &kp LC(RIGHT_ARROW)                &trans
             >;
             sensor-bindings = <&scroll_up_down>; // デフォルトのスクロール
