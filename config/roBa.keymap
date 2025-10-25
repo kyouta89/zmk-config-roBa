@@ -91,7 +91,7 @@
             bindings = <&kp JP_RBRACE>;
             key-positions = <7 8>; // I + O
         };
-lbracket_combo {
+        lbracket_combo {
             bindings = <&kp JP_LBRACKET>;
             key-positions = <29 30>; // N + M
         };
@@ -149,7 +149,7 @@ lbracket_combo {
 
         /*
          * default_layer
-         * 修正点: すべての &lt に &kp を追加
+         * 修正点: すべての &lt に &kp を追加 (ビルドエラーの主原因)
          */
         default_layer {
             bindings = <
@@ -173,22 +173,30 @@ lbracket_combo {
             sensor-bindings = <&pg_up_down>; // ページ上下
         };
 
-        NUM { // レイヤー 2 (NBR_表記は正しいので変更しない)
+        /*
+         * NUM レイヤー 2
+         * 修正点: ご要望に基づき、NBR_ を KP_ に戻します
+         */
+        NUM { 
             bindings = <
-&trans      &kp F7       &kp F8       &kp F9       &kp F10                                   &kp JP_PLUS      &kp NBR_7     &kp NBR_8     &kp NBR_9     &kp MINUS
-&trans      &kp F4       &kp F5       &kp F6       &kp F11      &trans       &trans        &kp JP_ASTERISK  &kp NBR_4     &kp NBR_5     &kp NBR_6     &kp SLASH
-&kp ESCAPE  &kp F1       &kp F2       &kp F3       &kp F12      &kp F13      &kp JP_EQUAL  &kp NBR_0     &kp NBR_1     &kp NBR_2     &kp NBR_3     &kp PERIOD
+&trans      &kp F7       &kp F8       &kp F9       &kp F10                                   &kp KP_PLUS      &kp KP_N7     &kp KP_N8     &kp KP_N9     &kp KP_MINUS
+&trans      &kp F4       &kp F5       &kp F6       &kp F11      &trans       &trans        &kp KP_ASTERISK  &kp KP_N4     &kp KP_N5     &kp KP_N6     &kp KP_SLASH
+&kp ESCAPE  &kp F1       &kp F2       &kp F3       &kp F12      &kp F13      &kp JP_EQUAL  &kp KP_N0     &kp KP_N1     &kp KP_N2     &kp KP_N3     &kp KP_DOT
 &trans      &trans       &trans       &trans       &trans       &trans       &trans        &trans                                                  &trans
             >;
             sensor-bindings = <&vol_up_down>; // 音量調整
         };
         
-        ARROW { // レイヤー 3
+        /*
+         * ARROW レイヤー 3
+         * 修正点: &kp LG_RIGHT_ARROW) -> &kp LG(RIGHT_ARROW) (ビルドエラーの原因)
+         */
+        ARROW {
             bindings = <
 /* 左手: ブラウザタブ, ウィンドウスナップ, アプリ操作 */                                                        /* 右手: 矢印, Home/End, テキスト選択 */
 &kp LC(T)          &kp LC(W)         &kp LC(LS(T))     &kp LC(TAB)        &kp LC(LS(TAB))                       &trans              &trans            &kp UP_ARROW      &trans            &trans
 &kp LG(UP)         &kp LG(LEFT_ARROW)&kp LG(DOWN)      &kp LG(RIGHT_ARROW)&kp LA(F4)       &kp LA(TAB)     &kp LA(LS(TAB))         &kp HOME            &kp LEFT_ARROW    &kp DOWN_ARROW    &kp RIGHT_ARROW   &kp END
-&trans             &trans            &trans            &trans             &trans           &trans          &trans                  &kp LS(HOME)        &kp LC(LS(LEFT))  &kp LC(LS(RIGHT)) &kp LS_END)       &trans
+&trans             &trans            &trans            &trans             &trans           &trans          &trans                  &kp LS(HOME)        &kp LC(LS(LEFT))  &kp LC(LS(RIGHT)) &kp LS(END)       &trans
 &trans             &trans            &trans            &trans             &trans           &trans          &trans                  &trans              &kp LC(LEFT_ARROW) &kp LC(RIGHT_ARROW)                &trans
             >;
             sensor-bindings = <&scroll_up_down>; // デフォルトのスクロール
