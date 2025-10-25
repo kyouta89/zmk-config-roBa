@@ -74,7 +74,6 @@
             key-positions = <20 21>;
         };
         
-        /* --- コンボの提案 (前回の会話より) --- */
         esc_combo {
             bindings = <&kp ESCAPE>;
             key-positions = <18 19>; // J + K
@@ -88,6 +87,11 @@
             bindings = <&kp JP_UNDERSCORE>;
             key-positions = <23 24>; // X + C
         };
+        
+        /* * 修正点: 以下の2つのコンボを削除
+         * (&lt SCROLL &kp I) がキー7にあるため、コンボと競合しエラーになる
+         */
+        /*
         lbrace_combo {
             bindings = <&kp JP_LBRACE>;
             key-positions = <6 7>; // U + I
@@ -96,6 +100,8 @@
             bindings = <&kp JP_RBRACE>;
             key-positions = <7 8>; // I + O
         };
+        */
+        
         lbracket_combo {
             bindings = <&kp JP_LBRACKET>;
             key-positions = <29 30>; // N + M
@@ -194,7 +200,7 @@
         
         /*
          * ARROW レイヤー 3
-         * 修正点: 親指行(4行目)のキー数を10個 -> 9個に修正 (ビルドエラーの原因)
+         * 修正点: 親指行(4行目)のキー数を9個に修正
          */
         ARROW {
             bindings = <
@@ -228,4 +234,9 @@
             bindings = <
 &trans  &trans        &trans        &trans        &kp LG(JP_HANZEN) /* Mac用 Cmd+` */   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
+            >;
+        };
+    };
+};
