@@ -4,16 +4,17 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // レイヤー名を番号に割り当てる
+
 #define SYMBOLS 1
 #define NUM 2
 #define ARROW 3
 #define MOUSE 4
 #define SCROLL 5
 #define ADJUST 6
-
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // OS設定を日本語キーボードのまま使用するための変換定義
+
 #define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &
 #define JP_QUOTE        AMPERSAND         // '
@@ -45,11 +46,11 @@
 };
 
 // &lt のグローバル設定を追加
+
 &lt {
     flavor = "balanced";
     tapping-term-ms = <150>; // ここで &lt 全体の判定時間を設定
 };
-
 
 / {
     combos {
@@ -69,23 +70,27 @@
             bindings = <&kp JP_DQUOTE>;
             key-positions = <20 21>;
         };
-        
+
         underscore_combo {
             bindings = <&kp JP_UNDERSCORE>;
             key-positions = <22 23>; // Z + X
         };
+
         lbrace_combo {
             bindings = <&kp JP_LBRACE>;
             key-positions = <17 18>; // H + J
         };
+
         rbrace_combo {
             bindings = <&kp JP_RBRACE>;
             key-positions = <18 19>; // J + K
         };
+
         lbracket_combo {
             bindings = <&kp JP_LBRACKET>;
             key-positions = <29 30>; // N + M
         };
+
         rbracket_combo {
             bindings = <&kp JP_RBRACKET>;
             key-positions = <30 31>; // M + ,
@@ -115,64 +120,67 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
-        }; 
+        };
 
         // 音量調整用
+
         vol_up_down: behavior_sensor_rotate_volume {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>;
+
             tap-ms = <20>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
+
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R             &kp T                                                      &kp Y        &kp U  &lt SCROLL I &kp O       &kp P
-&kp A             &kp S         &kp D         &kp F             &kp G        &kp ESCAPE              &kp MINUS      &kp H        &kp J  &kp K      &kp L       &kp SEMICOLON
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp TAB                 &kp JP_AT      &kp N        &kp M  &kp COMMA  &kp PERIOD  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt ADJUST LANGUAGE_2  &lt NUM SPACE  &lt ARROW LANGUAGE_1      &kp BACKSPACE  &lt SYMBOLS ENTER                 &kp DEL
+&kp Q             &kp W         &kp E         &kp R                  &kp T                                                   &kp Y              &kp U  &lt SCROLL I  &kp O       &kp P
+&kp A             &kp S         &kp D         &kp F                  &kp G          &kp ESCAPE                &kp MINUS      &kp H              &kp J  &kp K         &kp L       &kp SEMICOLON
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                  &kp B          &kp TAB                   &kp JP_AT      &kp N              &kp M  &kp COMMA     &kp PERIOD  &mt RIGHT_SHIFT SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt ADJUST LANGUAGE_2  &lt NUM SPACE  &lt ARROW LANGUAGE_1      &kp BACKSPACE  &lt SYMBOLS ENTER                                   &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        
-        SYMBOLS { // レイヤー 1
+        SYMBOLS {
             bindings = <
-/* 上段 */ &trans             &kp JP_QUOTE     &kp JP_LPAREN         &kp JP_RPAREN          &kp JP_EQUAL                   &kp JP_LPAREN         &kp JP_RPAREN          &trans        &trans         &kp MINUS
-/* 中段 */ &kp JP_BACKQUOTE   &kp DOLLAR       &kp PERCENT           &kp JP_AMPERSAND       &kp JP_TILDE  &trans   &trans  &kp JP_LBRACE         &kp JP_RBRACE          &kp JP_AT      &kp BACKSLASH  &kp JP_CARET
-/* 下段 */ &mt LSHIFT JP_UNDERSCORE &kp EXCLAMATION &kp JP_DQUOTE    &kp HASH               &kp JP_PIPE   &trans   &trans  &kp JP_LBRACKET       &kp JP_RBRACKET        &kp SEMICOLON  &kp JP_COLON &mt RSHIFT JP_YEN
-/* 親指 */ &kp LCTRL          &kp LEFT_WIN     &kp LEFT_ALT          &trans                 &trans        &trans   &trans  &trans                                                                     &trans
+&trans                    &kp JP_QUOTE     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_EQUAL                      &kp JP_LPAREN    &kp JP_RPAREN    &trans         &trans         &kp MINUS
+&kp JP_BACKQUOTE          &kp DOLLAR       &kp PERCENT    &kp JP_AMPERSAND  &kp JP_TILDE  &trans      &trans  &kp JP_LBRACE    &kp JP_RBRACE    &kp JP_AT      &kp BACKSLASH  &kp JP_CARET
+&mt LSHIFT JP_UNDERSCORE  &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH          &kp JP_PIPE   &trans      &trans  &kp JP_LBRACKET  &kp JP_RBRACKET  &kp SEMICOLON  &kp JP_COLON   &mt RSHIFT JP_YEN
+&kp LCTRL                 &kp LEFT_WIN     &kp LEFT_ALT   &trans            &trans        &trans      &trans  &trans                                                          &trans
             >;
         };
 
-
-        NUM { 
+        NUM {
             bindings = <
-&trans      &kp F7       &kp F8       &kp F9       &kp F10                                   &kp KP_PLUS      &kp KP_N7     &kp KP_N8     &kp KP_N9     &kp KP_MINUS
-&trans      &kp F4       &kp F5       &kp F6       &kp F11      &trans       &trans        &kp KP_ASTERISK  &kp KP_N4     &kp KP_N5     &kp KP_N6     &kp KP_SLASH
-&kp ESCAPE  &kp F1       &kp F2       &kp F3       &kp F12      &kp F13      &kp JP_EQUAL  &kp KP_N0     &kp KP_N1     &kp KP_N2     &kp KP_N3     &kp KP_DOT
-&trans      &trans       &trans       &trans       &trans       &trans       &trans        &trans                                                  &trans
+&trans      &kp F7  &kp F8  &kp F9  &kp F10                             &kp KP_PLUS      &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS
+&trans      &kp F4  &kp F5  &kp F6  &kp F11  &trans       &trans        &kp KP_ASTERISK  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_SLASH
+&kp ESCAPE  &kp F1  &kp F2  &kp F3  &kp F12  &kp F13      &kp JP_EQUAL  &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT
+&trans      &trans  &trans  &trans  &trans   &trans       &trans        &trans                                            &trans
             >;
+
             sensor-bindings = <&vol_up_down>; // 音量調整
         };
-        
+
         ARROW {
             bindings = <
-/* 左手: ブラウザタブ, ウィンドウスナップ, アプリ操作 */                                                        /* 右手: 矢印, Home/End, テキスト選択 */
-&kp LC(T)          &kp LC(W)         &kp LC(LS(T))     &kp LC(TAB)        &kp LC(LS(TAB))                       &trans              &trans            &kp UP_ARROW      &trans            &trans
-&kp LG(UP)         &kp LG(LEFT_ARROW)&kp LG(DOWN)      &kp LG(RIGHT_ARROW)&kp LA(F4)       &kp LA(TAB)     &kp LA(LS(TAB))         &kp HOME            &kp LEFT_ARROW    &kp DOWN_ARROW    &kp RIGHT_ARROW   &kp END
-&trans             &trans            &trans            &trans             &trans           &trans          &trans                  &kp LS(HOME)        &kp LC(LS(LEFT))  &kp LC(LS(RIGHT)) &kp LS(END)       &trans
-&trans             &trans            &trans            &trans             &trans           &trans          &trans                  &trans              &kp LC(LEFT_ARROW) &kp LC(RIGHT_ARROW)                &trans
+&kp LC(T)   &kp LC(W)           &kp LC(LS(T))  &kp LC(TAB)          &kp LC(LS(TAB))                           &trans        &trans            &kp UP_ARROW       &trans           &trans
+&kp LG(UP)  &kp LG(LEFT_ARROW)  &kp LG(DOWN)   &kp LG(RIGHT_ARROW)  &kp LA(F4)       &trans           &trans  &kp HOME      &kp LEFT_ARROW    &kp DOWN_ARROW     &kp RIGHT_ARROW  &kp END
+&trans      &trans              &trans         &trans               &kp LA(LS(TAB))  &kp LA(TAB)      &trans  &kp LS(HOME)  &kp LC(LS(LEFT))  &kp LC(LS(RIGHT))  &kp LS(END)      &kp LC(RIGHT_ARROW)
+&trans      &trans              &trans         &trans               &trans           &trans           &trans  &trans                                                              &kp LC(LEFT_ARROW)
             >;
+
             sensor-bindings = <&scroll_up_down>; // デフォルトのスクロール
         };
 
-        MOUSE { // レイヤー 4
+        MOUSE {
             bindings = <
 &to_layer_0 Q  &to_layer_0 W  &to_layer_0 E  &to_layer_0 R           &to_layer_0 T                                                 &to_layer_0 Y  &to_layer_0 U  &trans             &to_layer_0 O  &to_layer_0 P
 &to_layer_0 A  &to_layer_0 S  &to_layer_0 D  &to_layer_0 F           &to_layer_0 G  &trans                      &to_layer_0 MINUS  &to_layer_0 H  &mkp MB1       &mkp MB3           &mkp MB2       &to_layer_0 SEMICOLON
@@ -181,7 +189,7 @@
             >;
         };
 
-        SCROLL { // レイヤー 5
+        SCROLL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
@@ -194,12 +202,13 @@
          * レイヤー 6: ADJUST
          * 修正点: ターミナルショートカットをMac優先 (LGUI) に変更
          */
-        ADJUST { 
+
+        ADJUST {
             bindings = <
-&trans  &trans        &trans        &trans        &trans           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &trans
             >;
         };
     };
