@@ -171,7 +171,7 @@
 
         ARROW {
             bindings = <
-&kp LC(T)   &kp LC(W)           &kp LC(LS(T))  &kp LC(TAB)          &kp LC(LS(TAB))                           &trans        &trans            &kp UP_ARROW       &trans           &trans
+&kp LC(T)   &kp LC(W)           &kp LC(LS(T))  &kp LC(LS(TAB))      &kp LC(TAB)                               &trans        &trans            &kp UP_ARROW       &trans           &trans
 &kp LG(UP)  &kp LG(LEFT_ARROW)  &kp LG(DOWN)   &kp LG(RIGHT_ARROW)  &kp LA(F4)       &trans           &trans  &kp HOME      &kp LEFT_ARROW    &kp DOWN_ARROW     &kp RIGHT_ARROW  &kp END
 &trans      &trans              &trans         &trans               &kp LA(LS(TAB))  &kp LA(TAB)      &trans  &kp LS(HOME)  &kp LC(LS(LEFT))  &kp LC(LS(RIGHT))  &kp LS(END)      &kp LC(RIGHT_ARROW)
 &trans      &trans              &trans         &trans               &trans           &trans           &trans  &trans                                                              &kp LC(LEFT_ARROW)
