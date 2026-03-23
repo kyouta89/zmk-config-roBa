@@ -1,0 +1,16 @@
+# ビルド生成物を除外
+build/
+
+# ライブラリ本体を除外
+zmk/
+zephyr/
+modules/
+
+# OS固有のゴミファイル
+.DS_Store
+
+# その他、西側の管理ファイル
+.west/
+
+*.uf2
+zmk-pmw3610-driver/
